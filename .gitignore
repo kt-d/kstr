@@ -1,0 +1,6 @@
+*.o
+*.a
+*.so
+*.so.*
+/api/
+/test/test-kstr
