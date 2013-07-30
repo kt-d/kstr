@@ -36,8 +36,11 @@ libs := $(lib_a) $(lib_so) $(lib_so_x) $(lib_so_xyz)
 # any .c file in test/ is built into a binary with the same basename
 test_bin := $(basename $(wildcard test/*.c))
 
-# use posix.1-2008 xsi interfaces
-override CFLAGS += -D _XOPEN_SOURCE=700
+# CFLAGS option groups
+cc_gen := -fPIC
+cc_xsi := -D _XOPEN_SOURCE=700
+
+override CFLAGS += $(cc_gen) $(cc_xsi)
 
 # build everything
 .DEFAULT_GOAL := all
@@ -97,8 +100,6 @@ install: $(libs)
 # build the libraries
 .PHONY: lib
 lib: $(libs)
-
-$(libs): CFLAGS += -fPIC
 
 $(lib_a): $(lib_o)
 	$(AR) $(ARFLAGS) $@ $^
