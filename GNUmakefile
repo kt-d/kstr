@@ -59,6 +59,7 @@ docs:
 			-e "/^CALLER_GRAPH[[:blank:]]*=/s/=.*/= YES/" \
 			-e "/^CALL_GRAPH[[:blank:]]*=/s/=.*/= YES/" \
 			-e "/^DOT_FONTNAME[[:blank:]]*=/s/=.*/= monospace/" \
+			-e "/^DOT_GRAPH_MAX_NODES[[:blank:]]*=/s/=.*/= 100/" \
 			-e "/^DOT_TRANSPARENT[[:blank:]]*=/s/=.*/= YES/" \
 			-e "/^ENUM_VALUES_PER_LINE[[:blank:]]*=/s/=.*/= 1/" \
 			-e "/^EXTRACT_ALL[[:blank:]]*=/s/=.*/= YES/" \
